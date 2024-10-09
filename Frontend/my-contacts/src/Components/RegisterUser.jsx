@@ -5,6 +5,9 @@ function RegisterUser() {
     <>
       <div className="register-user">
         <form className="user-form" >
+          <div className="title">
+          <h1>Register User</h1>
+          </div>
           <input type="username" name="username" placeholder="Enter your username" />
           <input type="email" name="email" placeholder="Enter your email" />
           <input

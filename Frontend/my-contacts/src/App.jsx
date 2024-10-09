@@ -1,16 +1,27 @@
 import UserLogin from "./Components/UserLogin"
 import RegisterUser from "./Components/RegisterUser"
 import Contacts from "./Components/Contacts"
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
+
 function App() {
  
 
   return (
-    <>
-       {/* <UserLogin/>  */}
-      <RegisterUser />
-      {/* <Contacts/> */}
-    </>
+    // <>
+    //    {/* <UserLogin/>  */}
+    //   <RegisterUser />
+    //   {/* <Contacts/> */}
+    // </>
+
+    <Router>
+      <Routes>
+      <Route path="/" element={<UserLogin/>} />
+      <Route path="/register" element={<RegisterUser />} />
+      <Route path="/contacts" element={<Contacts />} />
+
+      </Routes>
+    </Router>
   )
 }
 
