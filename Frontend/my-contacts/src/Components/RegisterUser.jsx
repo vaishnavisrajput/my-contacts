@@ -1,22 +1,55 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 function RegisterUser() {
+  const [regUsername, setRegUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [regPassword, setRegPassword] = useState("");
+  const [storeUser, setStoreUser] = useState([]);
+
+  const handleRegister = () => {
+    setStoreUser([...storeUser, {regUsername, email, regPassword}]);
+    console.log({regUsername, regPassword, email});
+    console.log(storeUser);
+    
+  };
+
   return (
     <>
       <div className="register-user">
-        <form className="user-form" >
+        <form className="user-form">
           <div className="title">
-          <h1>Register User</h1>
+            <h1>Register User</h1>
           </div>
-          <input type="username" name="username" placeholder="Enter your username" />
-          <input type="email" name="email" placeholder="Enter your email" />
+          <input
+            type="text"
+            name="username"
+            value={regUsername}
+            onChange={(e) => {
+              setRegUsername(e.target.value);
+            }}
+            placeholder="Enter your username"
+          />
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            placeholder="Enter your email"
+          />
           <input
             type="password"
             name="password"
+            value={regPassword}
+            onChange={(e) => {
+              setRegPassword(e.target.value);
+            }}
             placeholder="Enter your user password"
           />
-          <button className="login">Login</button>
-          <button className="login">New user? Register.</button>
+          <Link to="/contacts" onClick={handleRegister} className="login">
+            Register
+          </Link>
         </form>
       </div>
     </>

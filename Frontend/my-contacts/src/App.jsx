@@ -8,11 +8,6 @@ function App() {
  
 
   return (
-    // <>
-    //    {/* <UserLogin/>  */}
-    //   <RegisterUser />
-    //   {/* <Contacts/> */}
-    // </>
 
     <Router>
       <Routes>
